@@ -1,0 +1,46 @@
+{
+  "name": "project-hermes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:start": "docker-compose up -d",
+    "db:stop": "docker-compose stop",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:migrate": "tsx ./src/db/scripts/migrate.ts",
+    "db:seed": "tsx ./src/db/scripts/seed.ts",
+    "db:studio": "drizzle-kit studio --port 3001 --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/auth": "^4.6.1",
+    "@fastify/bearer-auth": "^9.4.0",
+    "@fastify/cookie": "^9.3.1",
+    "@fastify/formbody": "^7.4.0",
+    "@fastify/jwt": "^8.0.0",
+    "@fastify/static": "^7.0.1",
+    "@fastify/swagger-ui": "^3.0.0",
+    "bcrypt": "^5.1.1",
+    "drizzle-orm": "^0.30.2",
+    "fastify": "^4.26.2",
+    "fastify-plugin": "^4.5.1",
+    "fastify-swagger": "^5.2.0",
+    "fastify-zod": "^1.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3",
+    "tsx": "^4.7.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/pg": "^8.11.2",
+    "drizzle-kit": "^0.20.14",
+    "typescript": "^5.4.2"
+  }
+}
